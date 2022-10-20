@@ -1,0 +1,267 @@
+/* Web Page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    min-height: 100vh;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/393/381/small_2x/green-grass-field-free-vector.png);
+    overflow: hidden;
+    cursor: none;
+}
+
+/* Modal  */
+.title {
+    font-size: 5rem;
+    position: absolute;
+    top: 100px;
+}
+.title-p {
+    position: absolute;
+    display: inline;
+    font-weight: 100;
+    font-size: 5rem;
+    color: #2E3D48;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-moz-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-webkit-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-ms-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  
+  @-o-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: black;
+    }
+  }
+
+.scoretable {
+    font-size: 1.5rem;
+    height: 100px;
+    padding: 0.5rem 1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color:white;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    transform: translate(-5%, -5%);
+    border: 1px solid white;
+}
+
+.scoretable div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    height: 100px;
+    padding: 0.5rem 1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color:white;
+    position: absolute;
+    left: 5%;
+    top: 42.5%;
+    transform: translate(-5%, -5%);
+    line-height: 2;
+}
+
+.instructions div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal {
+    cursor: default;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: yellowgreen;
+    pointer-events: all;
+    z-index: 1000;
+    color: white;
+}
+
+.modalclose {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.display {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal button {
+    padding: 1rem 2rem;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.5s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.modal button:hover {
+    background:rgb(255,255,255,0.6);
+    color: yellowgreen;
+}
+
+.modal h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.modal h2 {
+    visibility: hidden;
+}
+
+/* Game Interface  */
+
+.holes {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4,160px);
+    gap: 10px;
+    top: 50%;
+    left: 50%;
+    width: 670px;
+    height: 630px;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid black; */
+}
+
+.hole {
+    position: relative;
+    height: 150px;
+    width: 160px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.pile {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 210px;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.joker {
+    position: absolute;
+    top: 155px;
+    left: 0;
+    width: 155px;
+    object-fit: contain;
+    z-index: -1;
+    /* cursor: pointer; */
+}
+
+
+
+.flash {
+    background: yellowgreen;
+}
+
+.hammer {
+    position: absolute;
+    z-index: 1000;
+    height: 125px;
+    top:0;
+    left: 0;
+    transform: translate(10px, -40px);
+    pointer-events: none;
+}
+
+.highscore {
+    animation: scorebump 0.5s ease infinite alternate;
+}
+
+
+@keyframes scorebump {
+    from {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes faceup {
+    from {
+        transform: translateY(185px);
+    }
+    to {
+        transform: translateY(-165px);
+    }
+}
+
+@keyframes facedown {
+    from {
+        transform: translateY(-165px);
+    }
+    to {
+        transform: translateY(185px);
+    }
+}
+
